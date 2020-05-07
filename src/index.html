@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-  </body>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World!</title>
+	<link rel="stylesheet" href="index.css">
+	<script defer src="questionManager.js"></script>
+</head>
+
+<body>
+	<h1>Den Haag Quiz</h1>
+	<p>welkom bij de den haag quiz</p>
+
+	<p>
+		<h3 id="question">vraag</h3>
+		<h4 id="answerA">A: antwoord A</h4>
+		<h4 id="answerB">B: antwoord B</h4>
+		<h4 id="answerC">C: antwoord C</h4>
+	</p>
+
+	<h5 id="questionNumber">1</h5>
+
+	<button id="prevBtn">vorige vraag</button>
+	<button id="submitBtn">Sumbit</button>
+	<button id="nextBtn">volgende vraag</button>
+</body>
+
 </html>
