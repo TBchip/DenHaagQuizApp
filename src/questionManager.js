@@ -1,3 +1,7 @@
+const electron = require('electron');
+const remote = electron.remote;
+const path = require('path');
+
 const questionTxt = document.getElementById("questionTxt");
 const answerATxt = document.getElementById("answerATxt");
 const answerBTxt = document.getElementById("answerBTxt");
@@ -124,7 +128,10 @@ function updateStats() {
 }
 
 function finishQuiz() {
-	alert("klaar met de quiz");
+	remote.getGlobal('questionStats').correctAnswers = correctAnswers;
+	remote.getGlobal('questionStats').wrongAnswers = wrongAnswers;
+	remote.getGlobal('questionStats').totalQuestions = questions.length;
+	remote.getCurrentWindow().loadFile(path.join(__dirname, 'finalPage.html'));
 }
 
 
