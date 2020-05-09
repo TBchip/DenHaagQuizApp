@@ -1,6 +1,5 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, screen } = require('electron');
 const path = require('path');
-
 
 if (require('electron-squirrel-startup')) {
 	app.quit();
@@ -8,13 +7,18 @@ if (require('electron-squirrel-startup')) {
 
 const startApp = () => {
 	const mainWindow = new BrowserWindow({
-		width: 800,
-		height: 600,
+		width: screen.getPrimaryDisplay().workAreaSize.width,
+		height: screen.getPrimaryDisplay().workAreaSize.height,
+		minWidth: 600,
+		minHeight: 700,
 	});
 
+	mainWindow.setBounds({ x: 0, y: 0 })
+	mainWindow.maximize();
+	mainWindow.setMenu(null);
 	mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
-	//mainWindow.webContents.openDevTools();
+	mainWindow.webContents.openDevTools();
 };
 
 app.on('ready', startApp);
@@ -30,4 +34,3 @@ app.on('activate', () => {
 		createWindow();
 	}
 });
-

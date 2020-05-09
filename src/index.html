@@ -3,27 +3,60 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Hello World!</title>
+	<title>Den Haag Quiz</title>
 	<link rel="stylesheet" href="index.css">
+	<script defer src="questions.js"></script>
 	<script defer src="questionManager.js"></script>
 </head>
 
 <body>
-	<h1>Den Haag Quiz</h1>
-	<p>welkom bij de den haag quiz</p>
+	<header>
+		<div id="headerContent">
+			<img src="imgs/denhaagwapen.png" id="denhaagwapenLogo">
+			<div id="headerTxt">
+				<h1 id="headerTitle">Den Haag Quiz</h1>
+				<h6 id="createrMark">gemaakt door Thijs Bischoff</h6>
+			</div>
+		</div>
+	</header>
 
-	<p>
-		<h3 id="question">vraag</h3>
-		<h4 id="answerA">A: antwoord A</h4>
-		<h4 id="answerB">B: antwoord B</h4>
-		<h4 id="answerC">C: antwoord C</h4>
-	</p>
+	<main>
+		<h3 id="questionTxt">id: vraag?</h3>
+		<ul id="answers">
+			<li class="answerLI">
+				<input type="radio" name="answerInput" value="0" class="answerBtn" id="answerABtn">
+				<div>
+					<answer id="answerATxt" class="answerTxt">antwoord A</answer>
+				</div>
+			</li>
+			<li class="answerLI">
+				<input type="radio" name="answerInput" value="1" class="answerBtn" id="answerBBtn">
+				<div>
+					<answer id="answerBTxt" class="answerTxt">antwoord B</answer>
+				</div>
+			</li>
+			<li class="answerLI">
+				<input type="radio" name="answerInput" value="2" class="answerBtn" id="answerCBtn">
+				<div>
+					<answer id="answerCTxt" class="answerTxt">antwoord C</answer>
+				</div>
+			</li>
+		</ul>
 
-	<h5 id="questionNumber">1</h5>
+		<button id="submitQuestionBtn">Beantwoorden</button>
 
-	<button id="prevBtn">vorige vraag</button>
-	<button id="submitBtn">Sumbit</button>
-	<button id="nextBtn">volgende vraag</button>
+		<div class="answerExplenation">
+			<h4 id="correctAnswerTxt">goed/fout</h4>
+			<h4 id="answerExplenationTxt">uitleg van antwoord</h4>
+		</div>
+
+		<div>
+			<button class="navQuestionBtn" id="prevQuestionBtn">vorige vraag</button>
+			<button class="navQuestionBtn" id="nextQuestionBtn">volgende vraag</button>
+		</div>
+
+		<h4 id="stats">0 fout, 0 goed, 0/0 beantwoord</h4>
+	</main>
 </body>
 
 </html>
