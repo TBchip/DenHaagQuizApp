@@ -31,7 +31,7 @@ const startApp = () => {
 	mainWindow.setMenu(null);
 	mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
-	//mainWindow.webContents.openDevTools();
+	mainWindow.webContents.openDevTools();
 };
 
 app.on('ready', startApp);

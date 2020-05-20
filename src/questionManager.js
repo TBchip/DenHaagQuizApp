@@ -44,6 +44,7 @@ function previousQuestion() {
 	if (currentQuestionIndex > minQuestion) {
 		currentQuestionIndex -= 1;
 		showQuestion(currentQuestionIndex);
+		updateNextBtnState();
 	}
 }
 function submitQuestion() {
@@ -83,6 +84,8 @@ function submitQuestion() {
 
 	updateStats()
 	resetAnswerBtns();
+
+	updateNextBtnState();
 }
 function nextQuestion() {
 	if (currentQuestionIndex < maxQuestionUnlocked) {
@@ -94,6 +97,7 @@ function nextQuestion() {
 
 		currentQuestionIndex += 1;
 		showQuestion(currentQuestionIndex);
+		updateNextBtnState();
 	}
 }
 
@@ -120,6 +124,11 @@ function getAnsweredQuestions() {
 		}
 	});
 	return answeredQuestionsNum;
+}
+
+function updateNextBtnState() {
+	if (currentQuestionIndex < maxQuestionUnlocked) nextBtn.disabled = true;
+	else nextBtn.disabled = false;
 }
 
 function updateStats() {
