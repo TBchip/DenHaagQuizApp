@@ -127,8 +127,8 @@ function getAnsweredQuestions() {
 }
 
 function updateNextBtnState() {
-	if (currentQuestionIndex < maxQuestionUnlocked) nextBtn.disabled = true;
-	else nextBtn.disabled = false;
+	if (currentQuestionIndex < maxQuestionUnlocked) nextBtn.disabled = false;
+	else nextBtn.disabled = true;
 }
 
 function updateStats() {
@@ -157,5 +157,6 @@ function showQuestion(id) {
 	answerCTxt.innerHTML = questions[id].answers[2];
 }
 
-updateStats();
 showQuestion(0);
+updateStats();
+updateNextBtnState();

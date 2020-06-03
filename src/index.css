@@ -63,6 +63,8 @@ main{
 	font-size: 20px;
 	margin: 20px 50px 0 50px;
 	padding: 0;
+
+	text-align: center;
 }
 #answers{
 	list-style: none;
@@ -70,12 +72,14 @@ main{
 .answerTxt{
 	font-size: 20px;
 	margin: 0 80px 0 15px;
+	text-align: center;
 }
 .answerBtn{
 	width: 15px;
 	height: 15px;
 	
 	margin-left: 50px;
+	outline: none;
 }
 .answerLI{
 	display: flex;
@@ -103,6 +107,7 @@ main{
 #submitQuestionBtn{
 	background-color: #10b047;
 	border: none;
+	outline: none;
 
 	width: 175px;
 	height: 35px;
@@ -118,6 +123,7 @@ main{
 .navQuestionBtn{
 	background-color: #10b047;
 	border: none;
+	outline: none;
 
 	width: 150px;
 	height: 40px;
@@ -125,9 +131,22 @@ main{
 	margin: 0;
 	padding: 0;
 }
-
 .navQuestionBtn:hover{
 	background-color: #0e9e40;
+}
+.navQuestionBtn:disabled{
+	background-color: #0e9e40;
+	opacity: 0.7;
+
+	border: none;
+
+	color: #333333;
+
+	width: 150px;
+	height: 40px;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
 }
 
 #stats{
